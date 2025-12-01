@@ -1,59 +1,70 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   GRETA LANGMEAD PET CARE - DESIGN SYSTEM
+   Pixel-perfect replication of design reference
+   ============================================ */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* Pet Care Pink-Purple Color Palette (EXACT VALUES) */
+  --background: 0 47% 84%;          /* #E8C5C5 - Light rose background */
+  --foreground: 0 0% 29%;           /* #4A4A4A - Dark text */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Cards: Pure white with soft shadows */
+  --card: 0 0% 100%;                /* #FFFFFF */
+  --card-foreground: 0 0% 29%;      /* #4A4A4A */
 
-  /* Popovers with white background */
+  /* Popovers */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 0 0% 29%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: Dusty Rose Pink */
+  --primary: 348 49% 66%;           /* #D77A8E - Main pink */
+  --primary-foreground: 0 0% 100%;  /* White text on pink */
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Muted Purple */
+  --secondary: 316 21% 52%;         /* #9B6B8E - Purple accent */
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* CTA Pink (for buttons) */
+  --cta: 349 41% 64%;               /* #C88092 - Button pink */
+  --cta-foreground: 0 0% 100%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Price Purple */
+  --price: 289 19% 37%;             /* #6B4E71 - Price text color */
 
-  /* Destructive: Clean red */
+  /* Muted tones */
+  --muted: 0 33% 90%;               /* #F0E0E0 - Light borders */
+  --muted-foreground: 0 0% 45%;
+
+  /* Accent: Use primary pink */
+  --accent: 348 49% 66%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  /* Borders: Soft light pink-gray */
+  --border: 0 33% 90%;              /* #F0E0E0 */
+  --input: 0 0% 100%;               /* White inputs */
+  --ring: 348 49% 66%;              /* Pink focus ring */
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border Radius (matching design) */
+  --radius: 1.25rem;                /* 20px - Large rounded corners */
+  --radius-button: 1.5rem;          /* 24px - Pill-shaped buttons */
+  --radius-small: 0.75rem;          /* 12px */
 
-  /* Sidebar: Clean white with black text */
+  /* Sidebar (if needed) */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  --sidebar-foreground: 0 0% 29%;
+  --sidebar-primary: 348 49% 66%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 0 47% 84%;
+  --sidebar-accent-foreground: 0 0% 29%;
+  --sidebar-border: 0 33% 90%;
+  --sidebar-ring: 348 49% 66%;
 }
 
 .dark {
@@ -171,33 +182,95 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+/* Pet Care Typography System (EXACT FROM DESIGN) */
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;        /* 40px */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: hsl(var(--foreground));
 }
 
-/* Clean button styles */
-button {
-  font-weight: 500;
+h2 {
+  font-weight: 600;
+  font-size: 2rem;          /* 32px */
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: hsl(var(--foreground));
 }
 
-/* Subtle shadows for depth */
+h3 {
+  font-weight: 600;
+  font-size: 1.25rem;       /* 20px */
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+}
+
+h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+}
+
+p {
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
+}
+
+/* Button styles matching design */
+button {
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+/* Soft shadows matching design reference */
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.05);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.08);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 12px 24px 0 rgb(0 0 0 / 0.12);
+}
+
+/* Price text styling */
+.price-text {
+  color: hsl(var(--price));
+  font-weight: 700;
+  font-size: 1.75rem;       /* 28px */
+}
+
+/* Hero overlay effect */
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Testimonial circles */
+.testimonial-img {
+  border-radius: 50%;
+  border: 3px solid hsl(var(--primary));
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }
