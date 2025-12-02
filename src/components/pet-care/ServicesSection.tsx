@@ -69,46 +69,56 @@ export default function ServicesSection() {
     <section className="py-16">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h2 className="text-[hsl(var(--foreground))] mb-4">
+        <h2 className="text-[hsl(var(--foreground))] mb-3">
           Our Services & Pricing
         </h2>
-        <div className="inline-block px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-on-dark font-semibold text-lg shadow-md">
-          Dog Walking & Pet Sitting Services
-        </div>
+        <p className="text-[hsl(var(--muted-foreground))] text-lg max-w-2xl mx-auto">
+          Professional dog walking and pet sitting services tailored to your needs
+        </p>
       </div>
 
       {/* Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
       </div>
 
       {/* Additional Pricing Info */}
-      <div className="mt-8 p-8 bg-gradient-to-br from-white to-[hsl(var(--muted))] rounded-[var(--radius)] shadow-md card-hover">
+      <div className="max-w-4xl mx-auto">
         <h3 className="font-semibold text-[hsl(var(--foreground))] mb-6 text-center text-xl">
-          Additional Services & Fees
+          Additional Services
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center text-on-dark font-bold">
-              +5
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex items-center gap-4 p-6 bg-white rounded-[var(--radius)] shadow card-hover">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0">
+              <span className="text-on-dark font-bold text-lg">+$5</span>
             </div>
-            <span className="text-[hsl(var(--foreground))] text-sm">
-              Each additional dog or cat
-            </span>
+            <div>
+              <p className="text-[hsl(var(--foreground))] font-semibold">
+                Multiple Pets
+              </p>
+              <p className="text-[hsl(var(--muted-foreground))] text-sm">
+                Each additional dog or cat
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--secondary))] flex items-center justify-center text-on-dark font-bold">
-              +10
+          <div className="flex items-center gap-4 p-6 bg-white rounded-[var(--radius)] shadow card-hover">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0">
+              <span className="text-on-dark font-bold text-lg">+$10</span>
             </div>
-            <span className="text-[hsl(var(--foreground))] text-sm">
-              Evening or weekend visits
-            </span>
+            <div>
+              <p className="text-[hsl(var(--foreground))] font-semibold">
+                After Hours
+              </p>
+              <p className="text-[hsl(var(--muted-foreground))] text-sm">
+                Evening or weekend visits
+              </p>
+            </div>
           </div>
         </div>
-        <p className="text-center text-[hsl(var(--muted-foreground))] text-sm mt-6">
-          All prices in USD • Custom packages available
+        <p className="text-center text-[hsl(var(--muted-foreground))] text-sm mt-8">
+          All prices in USD • Custom packages available • Discounts for recurring bookings
         </p>
       </div>
     </section>
