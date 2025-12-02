@@ -66,34 +66,50 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-16">
       {/* Section Header */}
-      <div className="text-center mb-8">
-        <div className="inline-block px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-white font-semibold text-lg mb-8">
+      <div className="text-center mb-12">
+        <h2 className="text-[hsl(var(--foreground))] mb-4">
+          Our Services & Pricing
+        </h2>
+        <div className="inline-block px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-white font-semibold text-lg shadow-md">
           Dog Walking & Pet Sitting Services
         </div>
       </div>
 
       {/* Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
       </div>
 
       {/* Additional Pricing Info */}
-      <div className="mt-8 p-6 bg-white/80 rounded-[var(--radius)] shadow-sm">
-        <h4 className="font-semibold text-[hsl(var(--foreground))] mb-3 text-center">
-          Additional Services
-        </h4>
-        <div className="flex flex-col md:flex-row justify-center gap-6 text-sm text-[hsl(var(--muted-foreground))]">
-          <div className="text-center">
-            <span className="font-medium text-[hsl(var(--foreground))]">+$5</span> for each additional dog or cat
+      <div className="mt-8 p-8 bg-gradient-to-br from-white to-[hsl(var(--muted))] rounded-[var(--radius)] shadow-md card-hover">
+        <h3 className="font-semibold text-[hsl(var(--foreground))] mb-6 text-center text-xl">
+          Additional Services & Fees
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center text-white font-bold">
+              +5
+            </div>
+            <span className="text-[hsl(var(--foreground))] text-sm">
+              Each additional dog or cat
+            </span>
           </div>
-          <div className="text-center">
-            <span className="font-medium text-[hsl(var(--foreground))]">+$10</span> for evening or weekend visits
+          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-[hsl(var(--secondary))] flex items-center justify-center text-white font-bold">
+              +10
+            </div>
+            <span className="text-[hsl(var(--foreground))] text-sm">
+              Evening or weekend visits
+            </span>
           </div>
         </div>
+        <p className="text-center text-[hsl(var(--muted-foreground))] text-sm mt-6">
+          All prices in USD • Custom packages available
+        </p>
       </div>
     </section>
   );
