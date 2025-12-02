@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
     {
       name: 'Lisa R.',
       location: 'Venice, CA',
-      text: 'Best pet care service we've ever used! Professional, reliable, and our pets are always so happy. Highly recommend to anyone in the area.',
+      text: 'Best pet care service we\'ve ever used! Professional, reliable, and our pets are always so happy. Highly recommend to anyone in the area.',
       image: '/generated/testimonial-2.jpg',
       rating: 5,
     },
