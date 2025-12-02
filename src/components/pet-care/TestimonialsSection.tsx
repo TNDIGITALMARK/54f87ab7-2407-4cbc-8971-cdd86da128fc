@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
     {
       name: 'Maria K.',
       location: 'Santa Monica, CA',
-      text: 'Greta is wonderful with our anxious rescue dog. She's patient, caring, and really takes the time to understand each pet's needs.',
+      text: 'Greta is wonderful with our anxious rescue dog. She\'s patient, caring, and really takes the time to understand each pet\'s needs.',
       image: '/generated/testimonial-3.jpg',
       rating: 5,
     },
