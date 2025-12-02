@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center">
-              <PawPrint className="w-6 h-6 text-white" />
+              <PawPrint className="w-6 h-6 text-on-dark" />
             </div>
             <span className="text-lg font-semibold text-[hsl(var(--foreground))]">
               PAW & PAMPER
@@ -34,13 +34,13 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center hover:shadow-md transition-all">
-              <Facebook className="w-5 h-5 text-white" />
+              <Facebook className="w-5 h-5 text-on-dark" />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center hover:shadow-md transition-all">
-              <Instagram className="w-5 h-5 text-white" />
+              <Instagram className="w-5 h-5 text-on-dark" />
             </a>
             <a href="#" className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center hover:shadow-md transition-all">
-              <Twitter className="w-5 h-5 text-white" />
+              <Twitter className="w-5 h-5 text-on-dark" />
             </a>
           </div>
         </div>

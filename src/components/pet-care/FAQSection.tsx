@@ -110,7 +110,7 @@ export default function FAQSection() {
           <p className="text-[hsl(var(--muted-foreground))] mb-4">
             Still have questions?
           </p>
-          <button className="px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-white font-semibold hover:shadow-lg transition-all hover:scale-105">
+          <button className="px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-on-dark font-semibold hover:shadow-lg transition-all hover:scale-105">
             Contact Us
           </button>
         </div>

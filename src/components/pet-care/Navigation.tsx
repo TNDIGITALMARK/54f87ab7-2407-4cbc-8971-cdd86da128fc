@@ -11,7 +11,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center">
-              <PawPrint className="w-6 h-6 text-white" />
+              <PawPrint className="w-6 h-6 text-on-dark" />
             </div>
             <span className="text-xl font-semibold text-[hsl(var(--foreground))]">
               PAW & PAMPER
@@ -46,7 +46,7 @@ export default function Navigation() {
             </Link>
             <Link
               href="/dashboard"
-              className="px-6 py-2.5 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-white font-medium hover:shadow-md transition-all"
+              className="px-6 py-2.5 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-on-dark font-medium hover:shadow-md transition-all"
             >
               Contact
             </Link>

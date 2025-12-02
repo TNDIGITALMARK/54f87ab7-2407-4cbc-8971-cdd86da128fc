@@ -365,3 +365,87 @@ button:hover {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ============================================
+   TEXT ON DARK BACKGROUNDS UTILITY CLASSES
+   For use on gradient backgrounds, dark overlays, and colored sections
+   ============================================ */
+
+/* White text for dark/gradient backgrounds */
+.text-on-dark {
+  color: #ffffff !important;
+}
+
+.text-on-dark-primary {
+  color: #ffffff !important;
+}
+
+.text-on-dark-secondary {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.text-on-dark-muted {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+
+.text-on-dark-subtle {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+.text-on-dark-faded {
+  color: rgba(255, 255, 255, 0.70) !important;
+}
+
+/* Specific utility classes for common use cases */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-white-90 {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.80) !important;
+}
+
+.text-white-70 {
+  color: rgba(255, 255, 255, 0.70) !important;
+}
+
+.text-white-60 {
+  color: rgba(255, 255, 255, 0.60) !important;
+}
+
+/* Heading overrides for dark backgrounds */
+.text-on-dark h1,
+.text-on-dark h2,
+.text-on-dark h3,
+.text-on-dark h4,
+.text-on-dark h5,
+.text-on-dark h6 {
+  color: #ffffff !important;
+}
+
+.text-on-dark p {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Icon color for dark backgrounds */
+.icon-on-dark {
+  color: #ffffff;
+}
+
+/* Button text on gradient/dark backgrounds */
+.btn-text-white {
+  color: #ffffff !important;
+}
+
+/* Drop shadow for better contrast on images/overlays */
+.drop-shadow-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.drop-shadow-text-strong {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}

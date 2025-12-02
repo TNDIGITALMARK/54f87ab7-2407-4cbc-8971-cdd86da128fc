@@ -35,7 +35,7 @@ function ServiceCard({ title, price, duration, icon }: ServiceCardProps) {
         </p>
 
         {/* CTA Button */}
-        <button className="w-full mt-4 px-6 py-2.5 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-white font-medium hover:shadow-md transition-all hover:scale-102">
+        <button className="w-full mt-4 px-6 py-2.5 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-on-dark font-medium hover:shadow-md transition-all hover:scale-102">
           Book Now
         </button>
       </div>
@@ -49,19 +49,19 @@ export default function ServicesSection() {
       title: '30min walks',
       price: '25',
       duration: '30 minutes',
-      icon: <PawPrint className="w-8 h-8 text-white" />,
+      icon: <PawPrint className="w-8 h-8 text-on-dark" />,
     },
     {
       title: '60min walks',
       price: '40',
       duration: '60 minutes',
-      icon: <PawPrint className="w-8 h-8 text-white" />,
+      icon: <PawPrint className="w-8 h-8 text-on-dark" />,
     },
     {
       title: 'Pet Sitting',
       price: '25',
       duration: 'per hour',
-      icon: <PawPrint className="w-8 h-8 text-white" />,
+      icon: <PawPrint className="w-8 h-8 text-on-dark" />,
     },
   ];
 
@@ -72,7 +72,7 @@ export default function ServicesSection() {
         <h2 className="text-[hsl(var(--foreground))] mb-4">
           Our Services & Pricing
         </h2>
-        <div className="inline-block px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-white font-semibold text-lg shadow-md">
+        <div className="inline-block px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-on-dark font-semibold text-lg shadow-md">
           Dog Walking & Pet Sitting Services
         </div>
       </div>
@@ -91,7 +91,7 @@ export default function ServicesSection() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center text-on-dark font-bold">
               +5
             </div>
             <span className="text-[hsl(var(--foreground))] text-sm">
@@ -99,7 +99,7 @@ export default function ServicesSection() {
             </span>
           </div>
           <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--secondary))] flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-full bg-[hsl(var(--secondary))] flex items-center justify-center text-on-dark font-bold">
               +10
             </div>
             <span className="text-[hsl(var(--foreground))] text-sm">

@@ -28,7 +28,7 @@ export default function ContactSection() {
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center flex-shrink-0">
-                <Mail className="w-6 h-6 text-white" />
+                <Mail className="w-6 h-6 text-on-dark" />
               </div>
               <div>
                 <h4 className="font-semibold text-[hsl(var(--foreground))] mb-1">Email</h4>
@@ -40,7 +40,7 @@ export default function ContactSection() {
 
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center flex-shrink-0">
-                <Phone className="w-6 h-6 text-white" />
+                <Phone className="w-6 h-6 text-on-dark" />
               </div>
               <div>
                 <h4 className="font-semibold text-[hsl(var(--foreground))] mb-1">Phone</h4>
@@ -52,7 +52,7 @@ export default function ContactSection() {
 
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center flex-shrink-0">
-                <MessageSquare className="w-6 h-6 text-white" />
+                <MessageSquare className="w-6 h-6 text-on-dark" />
               </div>
               <div>
                 <h4 className="font-semibold text-[hsl(var(--foreground))] mb-1">Service Areas</h4>
@@ -115,7 +115,7 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-white font-semibold hover:shadow-lg transition-all hover:scale-[1.02]"
+              className="w-full px-6 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-on-dark font-semibold hover:shadow-lg transition-all hover:scale-[1.02]"
             >
               Send Message
             </button>

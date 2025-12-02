@@ -100,18 +100,18 @@ export default function BookingCalendar() {
                   onClick={() => setSelectedDate(dateStr)}
                   className={`flex-shrink-0 w-20 p-3 rounded-[var(--radius-small)] border-2 transition-all ${
                     selectedDate === dateStr
-                      ? 'border-[hsl(var(--primary))] bg-[hsl(var(--primary))] text-white'
+                      ? 'border-[hsl(var(--primary))] bg-[hsl(var(--primary))] text-on-dark'
                       : 'border-[hsl(var(--border))] hover:border-[hsl(var(--primary))]'
                   }`}
                 >
-                  <div className="text-xs mb-1">
+                  <div className={`text-xs mb-1 ${selectedDate === dateStr ? 'text-on-dark' : ''}`}>
                     {date.toLocaleDateString('en-US', { weekday: 'short' })}
                   </div>
-                  <div className="text-lg font-bold">
+                  <div className={`text-lg font-bold ${selectedDate === dateStr ? 'text-on-dark' : ''}`}>
                     {date.getDate()}
                   </div>
                   {isWeekend && (
-                    <div className="text-[10px] mt-1">+$10</div>
+                    <div className={`text-[10px] mt-1 ${selectedDate === dateStr ? 'text-on-dark' : ''}`}>+$10</div>
                   )}
                 </button>
               );
@@ -135,13 +135,13 @@ export default function BookingCalendar() {
                   onClick={() => setSelectedTime(time)}
                   className={`p-3 rounded-[var(--radius-small)] border-2 transition-all text-sm font-medium ${
                     selectedTime === time
-                      ? 'border-[hsl(var(--primary))] bg-[hsl(var(--primary))] text-white'
+                      ? 'border-[hsl(var(--primary))] bg-[hsl(var(--primary))] text-on-dark'
                       : 'border-[hsl(var(--border))] hover:border-[hsl(var(--primary))]'
                   }`}
                 >
-                  {time}
+                  <span className={selectedTime === time ? 'text-on-dark' : ''}>{time}</span>
                   {isEvening && (
-                    <div className="text-[10px] mt-1">+$10</div>
+                    <div className={`text-[10px] mt-1 ${selectedTime === time ? 'text-on-dark' : ''}`}>+$10</div>
                   )}
                 </button>
               );
@@ -177,7 +177,7 @@ export default function BookingCalendar() {
             </div>
             <button
               onClick={handleBooking}
-              className="w-full px-6 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-white font-semibold hover:shadow-lg transition-all hover:scale-[1.02]"
+              className="w-full px-6 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-on-dark font-semibold hover:shadow-lg transition-all hover:scale-[1.02]"
             >
               Confirm Booking
             </button>

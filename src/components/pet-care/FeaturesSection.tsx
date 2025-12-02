@@ -31,32 +31,32 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
 export default function FeaturesSection() {
   const features = [
     {
-      icon: <Shield className="w-6 h-6 text-white" />,
+      icon: <Shield className="w-6 h-6 text-on-dark" />,
       title: 'Insured & Bonded',
       description: 'Fully insured and bonded for your peace of mind. Your pets are protected with comprehensive coverage.',
     },
     {
-      icon: <Camera className="w-6 h-6 text-white" />,
+      icon: <Camera className="w-6 h-6 text-on-dark" />,
       title: 'Photo Updates',
       description: 'Receive photos and updates during every visit so you always know your pet is happy and safe.',
     },
     {
-      icon: <MapPin className="w-6 h-6 text-white" />,
+      icon: <MapPin className="w-6 h-6 text-on-dark" />,
       title: 'GPS Tracking',
       description: 'Track your dog\'s walk in real-time with GPS tracking. See exactly where your furry friend has been.',
     },
     {
-      icon: <Clock className="w-6 h-6 text-white" />,
+      icon: <Clock className="w-6 h-6 text-on-dark" />,
       title: 'Flexible Scheduling',
       description: 'Book visits that work with your schedule. Last-minute changes? We understand life happens.',
     },
     {
-      icon: <Heart className="w-6 h-6 text-white" />,
+      icon: <Heart className="w-6 h-6 text-on-dark" />,
       title: 'Loving Care',
       description: 'Treat every pet like our own. Your furry family members get attention, love, and proper care.',
     },
     {
-      icon: <Award className="w-6 h-6 text-white" />,
+      icon: <Award className="w-6 h-6 text-on-dark" />,
       title: 'Certified Professionals',
       description: 'Pet first aid certified and experienced with all breeds, sizes, and temperaments.',
     },

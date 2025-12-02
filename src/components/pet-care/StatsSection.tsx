@@ -29,25 +29,25 @@ function StatCard({ icon, number, label, delay = 0 }: StatCardProps) {
 export default function StatsSection() {
   const stats = [
     {
-      icon: <Users className="w-8 h-8 text-white" />,
+      icon: <Users className="w-8 h-8 text-on-dark" />,
       number: '500+',
       label: 'Happy Clients',
       delay: 0,
     },
     {
-      icon: <Heart className="w-8 h-8 text-white" />,
+      icon: <Heart className="w-8 h-8 text-on-dark" />,
       number: '800+',
       label: 'Pets Cared For',
       delay: 100,
     },
     {
-      icon: <Star className="w-8 h-8 text-white" />,
+      icon: <Star className="w-8 h-8 text-on-dark" />,
       number: '5.0',
       label: 'Average Rating',
       delay: 200,
     },
     {
-      icon: <Calendar className="w-8 h-8 text-white" />,
+      icon: <Calendar className="w-8 h-8 text-on-dark" />,
       number: '10+',
       label: 'Years Experience',
       delay: 300,
