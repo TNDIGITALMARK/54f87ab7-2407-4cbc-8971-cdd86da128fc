@@ -10,19 +10,17 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-white rounded-[var(--radius)] p-6 shadow card-hover">
-      <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-lg gradient-pink-purple flex items-center justify-center flex-shrink-0">
-          {icon}
-        </div>
-        <div>
-          <h3 className="font-semibold text-[hsl(var(--foreground))] mb-2">
-            {title}
-          </h3>
-          <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-            {description}
-          </p>
-        </div>
+    <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/50 hover:bg-white/60 transition-all group">
+      <div className="w-14 h-14 rounded-xl gradient-pink-purple flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+        {icon}
+      </div>
+      <div>
+        <h3 className="font-semibold text-[hsl(var(--foreground))] mb-2 text-lg">
+          {title}
+        </h3>
+        <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -63,21 +61,27 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="py-16 px-6">
-      <div className="text-center mb-12">
-        <h2 className="text-[hsl(var(--foreground))] mb-4">
-          What Makes Us Special
-        </h2>
-        <p className="text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
-          We go above and beyond to ensure your pets receive the best care possible.
-          Your peace of mind is our priority.
-        </p>
-      </div>
+    <section className="py-24 px-6 bg-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 left-0 w-64 h-64 bg-[hsl(var(--primary))]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-[hsl(var(--secondary))]/10 rounded-full blur-3xl" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {features.map((feature, index) => (
-          <FeatureCard key={index} {...feature} />
-        ))}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-[hsl(var(--foreground))] mb-4">
+            What Makes Us Special
+          </h2>
+          <p className="text-[hsl(var(--muted-foreground))] text-lg max-w-2xl mx-auto">
+            We go above and beyond to ensure your pets receive the best care possible.
+            Your peace of mind is our priority.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} />
+          ))}
+        </div>
       </div>
     </section>
   );

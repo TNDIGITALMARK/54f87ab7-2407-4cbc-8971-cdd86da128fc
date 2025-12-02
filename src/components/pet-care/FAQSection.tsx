@@ -12,22 +12,20 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
   return (
-    <div className="bg-white rounded-[var(--radius)] shadow-sm overflow-hidden">
+    <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-[hsl(var(--border))] overflow-hidden hover:shadow-md transition-all">
       <button
         onClick={onClick}
-        className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-[hsl(var(--muted))] transition-colors"
+        className="w-full px-8 py-5 flex items-center justify-between text-left hover:bg-white/90 transition-colors"
       >
-        <span className="font-semibold text-[hsl(var(--foreground))]">
+        <span className="font-semibold text-[hsl(var(--foreground))] text-lg">
           {question}
         </span>
-        <ChevronDown
-          className={`w-5 h-5 text-[hsl(var(--primary))] transition-transform ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-        />
+        <div className={`w-10 h-10 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0 ml-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}>
+          <ChevronDown className="w-5 h-5 text-white" />
+        </div>
       </button>
       {isOpen && (
-        <div className="px-6 pb-4 text-[hsl(var(--muted-foreground))] leading-relaxed animate-fadeIn">
+        <div className="px-8 pb-6 text-[hsl(var(--muted-foreground))] leading-relaxed text-base animate-fadeIn">
           {answer}
         </div>
       )}
@@ -82,19 +80,23 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-16 px-6">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
+    <section className="py-24 px-6 bg-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(var(--primary))]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[hsl(var(--secondary))]/5 rounded-full blur-3xl" />
+
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-16">
           <h2 className="text-[hsl(var(--foreground))] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-[hsl(var(--muted-foreground))]">
+          <p className="text-[hsl(var(--muted-foreground))] text-lg">
             Have questions? We've got answers. Can't find what you're looking for?
             Feel free to contact us!
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}
@@ -106,11 +108,11 @@ export default function FAQSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-[hsl(var(--muted-foreground))] mb-4">
+        <div className="mt-16 text-center">
+          <p className="text-[hsl(var(--muted-foreground))] text-lg mb-6">
             Still have questions?
           </p>
-          <button className="px-8 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-on-dark font-semibold hover:shadow-lg transition-all hover:scale-105">
+          <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-semibold text-lg hover:shadow-xl transition-all hover:scale-105">
             Contact Us
           </button>
         </div>

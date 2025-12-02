@@ -11,33 +11,35 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, price, duration, icon }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-[var(--radius)] p-8 shadow hover:shadow-lg transition-all">
-      <div className="flex flex-col items-center text-center">
-        {/* Icon */}
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center mb-4">
-          {icon}
+    <div className="relative group">
+      <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border-2 border-[hsl(var(--primary))]/20 transition-all group-hover:border-[hsl(var(--primary))]/40 group-hover:bg-white">
+        <div className="flex flex-col items-center text-center">
+          {/* Icon */}
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center mb-6 shadow-lg">
+            {icon}
+          </div>
+
+          {/* Title */}
+          <h3 className="text-xl text-[hsl(var(--foreground))] font-semibold mb-3">
+            {title}
+          </h3>
+
+          {/* Price */}
+          <div className="text-4xl font-bold text-[hsl(var(--price))] mb-2">
+            ${price}
+          </div>
+
+          {/* Duration */}
+          <p className="text-[hsl(var(--muted-foreground))] text-sm mb-6 flex items-center gap-1">
+            <Clock className="w-4 h-4" />
+            {duration}
+          </p>
+
+          {/* CTA Button */}
+          <button className="w-full px-8 py-3 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-semibold hover:shadow-xl transition-all hover:scale-105">
+            Book Now
+          </button>
         </div>
-
-        {/* Title */}
-        <h3 className="text-[hsl(var(--foreground))] font-semibold mb-2">
-          {title}
-        </h3>
-
-        {/* Price */}
-        <div className="price-text mb-2">
-          ${price}
-        </div>
-
-        {/* Duration */}
-        <p className="text-[hsl(var(--muted-foreground))] text-sm mb-4 flex items-center gap-1">
-          <Clock className="w-4 h-4" />
-          {duration}
-        </p>
-
-        {/* CTA Button */}
-        <button className="w-full mt-4 px-6 py-2.5 rounded-[var(--radius-button)] bg-[hsl(var(--primary))] text-on-dark font-medium hover:shadow-md transition-all hover:scale-102">
-          Book Now
-        </button>
       </div>
     </div>
   );
@@ -66,60 +68,66 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-16">
-      {/* Section Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-[hsl(var(--foreground))] mb-3">
-          Our Services & Pricing
-        </h2>
-        <p className="text-[hsl(var(--muted-foreground))] text-lg max-w-2xl mx-auto">
-          Professional dog walking and pet sitting services tailored to your needs
-        </p>
-      </div>
+    <section className="py-24 px-6 bg-gradient-to-b from-[hsl(var(--background))] to-white relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[hsl(var(--primary))]/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[hsl(var(--secondary))]/5 rounded-full blur-3xl -z-10" />
 
-      {/* Service Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
-        ))}
-      </div>
-
-      {/* Additional Pricing Info */}
-      <div className="max-w-4xl mx-auto">
-        <h3 className="font-semibold text-[hsl(var(--foreground))] mb-6 text-center text-xl">
-          Additional Services
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex items-center gap-4 p-6 bg-white rounded-[var(--radius)] shadow card-hover">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0">
-              <span className="text-on-dark font-bold text-lg">+$5</span>
-            </div>
-            <div>
-              <p className="text-[hsl(var(--foreground))] font-semibold">
-                Multiple Pets
-              </p>
-              <p className="text-[hsl(var(--muted-foreground))] text-sm">
-                Each additional dog or cat
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 p-6 bg-white rounded-[var(--radius)] shadow card-hover">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0">
-              <span className="text-on-dark font-bold text-lg">+$10</span>
-            </div>
-            <div>
-              <p className="text-[hsl(var(--foreground))] font-semibold">
-                After Hours
-              </p>
-              <p className="text-[hsl(var(--muted-foreground))] text-sm">
-                Evening or weekend visits
-              </p>
-            </div>
-          </div>
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-[hsl(var(--foreground))] mb-4">
+            Our Services & Pricing
+          </h2>
+          <p className="text-[hsl(var(--muted-foreground))] text-lg max-w-2xl mx-auto">
+            Professional dog walking and pet sitting services tailored to your needs
+          </p>
         </div>
-        <p className="text-center text-[hsl(var(--muted-foreground))] text-sm mt-8">
-          All prices in USD • Custom packages available • Discounts for recurring bookings
-        </p>
+
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
+
+        {/* Additional Pricing Info */}
+        <div className="max-w-5xl mx-auto">
+          <h3 className="font-semibold text-[hsl(var(--foreground))] mb-8 text-center text-2xl">
+            Additional Services
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="flex items-center gap-5 p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-[hsl(var(--border))]">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0 shadow-md">
+                <span className="text-white font-bold text-xl">+$5</span>
+              </div>
+              <div>
+                <p className="text-[hsl(var(--foreground))] font-semibold text-lg mb-1">
+                  Multiple Pets
+                </p>
+                <p className="text-[hsl(var(--muted-foreground))] text-sm">
+                  Each additional dog or cat
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-5 p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-[hsl(var(--border))]">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0 shadow-md">
+                <span className="text-white font-bold text-xl">+$10</span>
+              </div>
+              <div>
+                <p className="text-[hsl(var(--foreground))] font-semibold text-lg mb-1">
+                  After Hours
+                </p>
+                <p className="text-[hsl(var(--muted-foreground))] text-sm">
+                  Evening or weekend visits
+                </p>
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-[hsl(var(--muted-foreground))] text-sm mt-6">
+            All prices in USD • Custom packages available • Discounts for recurring bookings
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export default function Index() {
     <div className="min-h-screen">
       <Navigation />
 
-      <main className="container mx-auto px-6 py-8 max-w-7xl">
+      <main>
         <HeroSection />
         <StatsSection />
         <FeaturesSection />

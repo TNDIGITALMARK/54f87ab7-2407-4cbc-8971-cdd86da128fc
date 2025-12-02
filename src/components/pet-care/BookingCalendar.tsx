@@ -49,14 +49,21 @@ export default function BookingCalendar() {
   };
 
   return (
-    <section className="py-16 bg-white rounded-[var(--radius)] shadow-lg">
-      <div className="px-8">
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <Calendar className="w-8 h-8 text-[hsl(var(--primary))]" />
-          <h2 className="text-3xl font-bold text-[hsl(var(--foreground))]">
+    <section className="py-24 px-6 bg-gradient-to-br from-[hsl(var(--background))] via-white to-[hsl(var(--background))]/50 relative overflow-hidden">
+      {/* Decorative Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-[hsl(var(--primary))]/10 to-[hsl(var(--secondary))]/10 rounded-full blur-3xl" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="flex items-center justify-center gap-3 mb-12">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center shadow-lg">
+            <Calendar className="w-7 h-7 text-white" />
+          </div>
+          <h2 className="text-4xl font-bold text-[hsl(var(--foreground))]">
             Book Your Visit
           </h2>
         </div>
+
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 border border-[hsl(var(--border))] shadow-xl">{/* Content wrapper */}
 
         {/* Service Selection */}
         <div className="mb-8">
@@ -151,18 +158,18 @@ export default function BookingCalendar() {
 
         {/* Booking Summary & Confirm */}
         {selectedService && selectedDate && selectedTime && (
-          <div className="bg-[hsl(var(--background))] rounded-[var(--radius-small)] p-6">
-            <h3 className="font-semibold text-[hsl(var(--foreground))] mb-4">
+          <div className="bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--secondary))]/5 rounded-2xl p-8 border-2 border-[hsl(var(--primary))]/20">
+            <h3 className="font-semibold text-[hsl(var(--foreground))] mb-6 text-xl">
               Booking Summary
             </h3>
-            <div className="space-y-2 text-sm text-[hsl(var(--muted-foreground))] mb-6">
-              <div className="flex justify-between">
+            <div className="space-y-3 text-base text-[hsl(var(--muted-foreground))] mb-8">
+              <div className="flex justify-between items-center">
                 <span>Service:</span>
-                <span className="font-medium text-[hsl(var(--foreground))]">{selectedService}</span>
+                <span className="font-semibold text-[hsl(var(--foreground))] text-lg">{selectedService}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span>Date:</span>
-                <span className="font-medium text-[hsl(var(--foreground))]">
+                <span className="font-semibold text-[hsl(var(--foreground))] text-lg">
                   {new Date(selectedDate).toLocaleDateString('en-US', {
                     weekday: 'long',
                     month: 'long',
@@ -170,19 +177,20 @@ export default function BookingCalendar() {
                   })}
                 </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span>Time:</span>
-                <span className="font-medium text-[hsl(var(--foreground))]">{selectedTime}</span>
+                <span className="font-semibold text-[hsl(var(--foreground))] text-lg">{selectedTime}</span>
               </div>
             </div>
             <button
               onClick={handleBooking}
-              className="w-full px-6 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-on-dark font-semibold hover:shadow-lg transition-all hover:scale-[1.02]"
+              className="w-full px-8 py-4 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-semibold text-lg hover:shadow-xl transition-all hover:scale-105"
             >
               Confirm Booking
             </button>
           </div>
         )}
+        </div>
       </div>
     </section>
   );

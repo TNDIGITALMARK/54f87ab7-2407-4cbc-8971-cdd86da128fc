@@ -17,57 +17,68 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Contact Info */}
-        <div>
-          <h2 className="text-3xl font-bold text-[hsl(var(--foreground))] mb-6">
-            Contact Us
-          </h2>
+    <section className="py-24 px-6 bg-gradient-to-b from-[hsl(var(--background))]/50 to-white relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[hsl(var(--primary))]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[hsl(var(--secondary))]/5 rounded-full blur-3xl" />
 
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center flex-shrink-0">
-                <Mail className="w-6 h-6 text-on-dark" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-[hsl(var(--foreground))] mb-1">Email</h4>
-                <p className="text-[hsl(var(--muted-foreground))]">
-                  greta@pawandpamper.com
-                </p>
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Contact Info */}
+          <div>
+            <h2 className="text-4xl font-bold text-[hsl(var(--foreground))] mb-8">
+              Get In Touch
+            </h2>
+            <p className="text-[hsl(var(--muted-foreground))] text-lg mb-10">
+              Ready to give your pet the care they deserve? We'd love to hear from you!
+            </p>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center flex-shrink-0">
-                <Phone className="w-6 h-6 text-on-dark" />
+            <div className="space-y-8">
+              <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-[hsl(var(--border))]">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0 shadow-md">
+                  <Mail className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[hsl(var(--foreground))] mb-2 text-lg">Email</h4>
+                  <p className="text-[hsl(var(--muted-foreground))] text-base">
+                    greta@pawandpamper.com
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-[hsl(var(--foreground))] mb-1">Phone</h4>
-                <p className="text-[hsl(var(--muted-foreground))]">
-                  (310) 555-PAWS
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[hsl(var(--primary))] flex items-center justify-center flex-shrink-0">
-                <MessageSquare className="w-6 h-6 text-on-dark" />
+              <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-[hsl(var(--border))]">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0 shadow-md">
+                  <Phone className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[hsl(var(--foreground))] mb-2 text-lg">Phone</h4>
+                  <p className="text-[hsl(var(--muted-foreground))] text-base">
+                    (310) 555-PAWS
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-[hsl(var(--foreground))] mb-1">Service Areas</h4>
-                <p className="text-[hsl(var(--muted-foreground))]">
-                  Marina Del Rey • Venice • Westchester<br />
-                  Playa Del Rey • Santa Monica
-                </p>
+
+              <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-[hsl(var(--border))]">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))] flex items-center justify-center flex-shrink-0 shadow-md">
+                  <MessageSquare className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[hsl(var(--foreground))] mb-2 text-lg">Service Areas</h4>
+                  <p className="text-[hsl(var(--muted-foreground))] text-base">
+                    Marina Del Rey • Venice • Westchester<br />
+                    Playa Del Rey • Santa Monica
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Contact Form */}
-        <div className="bg-white rounded-[var(--radius)] p-8 shadow">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Contact Form */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 border border-[hsl(var(--border))] shadow-xl">
+            <h3 className="text-2xl font-semibold text-[hsl(var(--foreground))] mb-8">
+              Send Us a Message
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-[hsl(var(--foreground))] mb-2">
                 Email
@@ -115,12 +126,13 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-[var(--radius-button)] bg-[hsl(var(--cta))] text-on-dark font-semibold hover:shadow-lg transition-all hover:scale-[1.02]"
+              className="w-full px-8 py-4 rounded-full bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--secondary))] text-white font-semibold text-lg hover:shadow-xl transition-all hover:scale-105"
             >
               Send Message
             </button>
           </form>
         </div>
+      </div>
       </div>
     </section>
   );

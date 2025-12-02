@@ -15,11 +15,11 @@ function StatCard({ icon, number, label, delay = 0 }: StatCardProps) {
       className="flex flex-col items-center text-center p-6 animate-fadeIn"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="w-16 h-16 rounded-full gradient-pink-purple flex items-center justify-center mb-4 shadow-md">
+      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
         {icon}
       </div>
-      <div className="stat-number mb-2">{number}</div>
-      <p className="text-[hsl(var(--muted-foreground))] text-sm font-medium">
+      <div className="text-5xl font-bold text-white mb-2">{number}</div>
+      <p className="text-white/90 text-sm font-medium">
         {label}
       </p>
     </div>
@@ -55,9 +55,9 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-16 px-6">
-      <div className="bg-white rounded-[var(--radius)] shadow-lg p-8 md:p-12">
-        <h2 className="text-center mb-12 text-[hsl(var(--foreground))]">
+    <section className="py-20 px-6 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--secondary))]">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-center mb-16 text-white">
           Why Pet Owners Trust Us
         </h2>
 
